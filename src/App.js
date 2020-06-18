@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -8,6 +7,7 @@ function App() {
       <header className="App-header">
        A Trivia App
       </header>
+      <button id="str-game-btn">Start Game</button>
     </div>
   );
 }

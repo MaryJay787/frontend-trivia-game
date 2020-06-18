@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+// import { render } from '@testing-library/react';
 import App from './App';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
@@ -12,5 +12,12 @@ describe("Trivia Testing", () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('header').text()).toContain("A Trivia App");
   });
+
+  test('renders start button', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('#str-game-btn').text()).toBe('Start Game');
+  });
+
+  
 });
 
