@@ -6,16 +6,25 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
 
 
+// expect(wrapper.find("#link-to-next-page").text())
 
 describe("Trivia Testing", () => {
-  test('renders learn react link', () => {
-    const wrapper = shallow(<App />);
+
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  test('render learn react link', () => {
     expect(wrapper.find('header').text()).toContain("A Trivia App");
   });
 
-  test('renders start button', () => {
-    const wrapper = shallow(<App />);
+  test('render start button', () => {
     expect(wrapper.find('#str-game-btn').text()).toBe('Start Game');
+  });
+
+  test('render a start button click event', () => {
+    wrapper.find('#str-game-btn').simulate("click");
   });
 
   
