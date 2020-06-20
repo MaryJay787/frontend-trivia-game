@@ -1,6 +1,6 @@
 import React from 'react';
 // import { render } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() });
@@ -20,11 +20,11 @@ describe("Trivia Testing", () => {
   });
 
   test('render start button', () => {
-    expect(wrapper.find('#str-game-btn').text()).toBe('Start Game');
+    expect(wrapper.find('.str-game-btn').text()).toBe('Start Game');
   });
 
   test('render a start button click event', () => {
-    wrapper.find('#str-game-btn').simulate("click");
+    wrapper.find('.str-game-btn').simulate("click");
   });
 
   

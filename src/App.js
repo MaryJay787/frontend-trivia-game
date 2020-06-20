@@ -11,7 +11,9 @@ class App extends Component {
           <header className="App-header">
           A Trivia App
           </header>
-          <Link to={'/gamepage'} className='link-to-game-page'><button id="str-game-btn">Start Game</button></Link>
+          <Link to={'/gamepage'} className='link-to-game-page'>
+            <button type="button" className="str-game-btn">Start Game</button>
+          </Link>
           <Switch>
             <Route path='/gamepage' component={GamePage}/>
           </Switch>
