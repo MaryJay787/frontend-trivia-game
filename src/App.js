@@ -11,10 +11,13 @@ class App extends Component {
           <header className="App-header">
           A Trivia App
           </header>
-          
+          <div className="container">
+          <h1>Welcome to A Trivia Game</h1>
+          <p>Click "Start Game" to Begin!!!</p>
           <Link to={'/gamepage'} className='link-to-game-page'>
             <button type="button" className="str-game-btn">Start Game</button>
           </Link>
+          </div>
           <Switch>
             <Route path='/gamepage' component={GamePage}/>
           </Switch>
