@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import GamePage from './components/GamePage';
+import { getCategories } from './fetches/backend';
 
 class App extends Component {
+  componentDidMount(){
+    getCategories().then(all_categories => console.log())
+  };
+
   render() {
     return (
       <Router>
