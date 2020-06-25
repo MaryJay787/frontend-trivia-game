@@ -5,8 +5,14 @@ import GamePage from './components/GamePage';
 import { getCategories } from './fetches/backend';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {categories: []};
+  }
   componentDidMount(){
-    getCategories().then(all_categories => console.log(all_categories))
+    getCategories().then(all_categories => this.setState({categories: all_categories.map(item => (item.title))}));
+    // getCategories().then(all_categories => console.log(all_categories))
+
   };
 
   render() {
