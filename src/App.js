@@ -6,7 +6,7 @@ import { getCategories } from './fetches/backend';
 
 class App extends Component {
   componentDidMount(){
-    getCategories().then(all_categories => console.log())
+    getCategories().then(all_categories => console.log(all_categories))
   };
 
   render() {
