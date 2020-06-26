@@ -7,13 +7,18 @@ import { getCategories } from './fetches/backend';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {categories: []};
+    this.state = {categories: [], 
+                  renderGamePage: false};
   }
   componentDidMount(){
     getCategories().then(all_categories => this.setState({categories: all_categories.map(item => (item.title))}));
     // getCategories().then(all_categories => console.log(all_categories))
 
   };
+
+  // handleClick(e){
+  //   this.setState({renderGamePage: true});
+  // };
 
   render() {
     return (
@@ -26,12 +31,14 @@ class App extends Component {
           <h1>Welcome to A Trivia Game</h1>
           <p>Click "Start Game" to Begin!!!</p>
           <Link to={'/gamepage'} className='link-to-game-page'>
-            <button type="button" className="str-game-btn">Start Game</button>
+            <button type="button" onClick={this.handleClick} className="str-game-btn">Start Game</button>
           </Link>
           </div>
           <Switch>
-            <Route path='/gamepage' component={GamePage}/>
+            <Route path='/gamepage'  render={() => (<GamePage categories={this.state.categories}/>)} />
           </Switch>
+
+          {/* {this.state.renderGamePage ? <GamePage /> : 'No Game Page'} */}
         </div>
       </Router>
     );

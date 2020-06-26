@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './GamePage.css';
 
 class GamePage extends Component {
+    componentDidMount(){
+    };
+
     render() {
         return(
             <div>
@@ -10,10 +13,10 @@ class GamePage extends Component {
                 <h1>Game Page</h1>
                 <p>Select Your Category</p>           
                 <div className="grid-container">
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">Pillars of Islam</div>
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">Prophets</div>
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">Women in Islam</div>  
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">Quran</div>
+                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[0]}</div>
+                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</div>
+                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</div>  
+                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</div>
                 </div>
 
             </div>
