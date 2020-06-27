@@ -5,7 +5,6 @@ class GamePage extends Component {
     componentDidMount(){
     };
 
-
     poiQuestions(){
     // const quests = this.props.questions.map(item => item.ask)
     // const quests = this.props.questions.map(item => item.id === category_ids[0] ( item.ask));
@@ -48,9 +47,11 @@ class GamePage extends Component {
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</div>
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</div>  
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</div>
-                    {console.log(this.prophetQuestions())}
+                    {/* {console.log(this.prophetQuestions())} */}
                 </div>
-        <p></p>
+                <div className="grid-container">
+                    {this.poiQuestions().map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)}
+                </div>
             </div>
         );
     }
