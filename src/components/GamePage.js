@@ -5,6 +5,14 @@ class GamePage extends Component {
     componentDidMount(){
     };
 
+
+    sepQuestions(){
+        // this.props.questions.map(item => item.ask)
+        const quests = this.props.questions.map(item => item.ask)
+        // console.log(quests)
+        return quests
+    };
+
     render() {
         return(
             <div>
@@ -17,8 +25,9 @@ class GamePage extends Component {
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</div>
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</div>  
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</div>
+                    {console.log(this.props.cat_ids)}
                 </div>
-
+        <p></p>
             </div>
         );
     }

@@ -7,10 +7,10 @@ import { getCategories, getPOIQuestions } from './fetches/backend';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {categories: [], questions: []};
+    this.state = {categories: [], questions: [], cat_ids: []};
   }
   componentDidMount(){
-    getCategories().then(all_categories => this.setState({categories: all_categories.map(item => (item.title))}));
+    getCategories().then(all_categories => this.setState({categories: all_categories.map(item => (item.title)), cat_ids: all_categories.map(item_two => (item_two.id))}));
     // getCategories().then(all_categories => console.log(all_categories))
     getPOIQuestions().then(questions => this.setState({questions: questions}));
 
@@ -31,7 +31,7 @@ class App extends Component {
           </Link>
           </div>
           <Switch>
-            <Route path='/gamepage'  render={() => (<GamePage categories={this.state.categories} questions={this.state.questions}/>)} />
+            <Route path='/gamepage'  render={() => (<GamePage categories={this.state.categories} questions={this.state.questions} cat_ids={this.state.cat_ids}/>)} />
           </Switch>
         </div>
       </Router>
