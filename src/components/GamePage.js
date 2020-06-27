@@ -7,6 +7,7 @@ class GamePage extends Component {
 
 
     sepQuestions(){
+        // seperate the questions but their category ID in this function
         // this.props.questions.map(item => item.ask)
         const quests = this.props.questions.map(item => item.ask)
         // console.log(quests)
