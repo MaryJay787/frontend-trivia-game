@@ -6,12 +6,14 @@ class GamePage extends Component {
     };
 
 
-    sepQuestions(){
-        // seperate the questions but their category ID in this function
-        // this.props.questions.map(item => item.ask)
-        const quests = this.props.questions.map(item => item.ask)
-        // console.log(quests)
-        return quests
+    poiQuestions(){
+         // const quests = this.props.questions.map(item => item.ask)
+        // const quests = this.props.questions.map(item => item.id === category_ids[0] ( item.ask));
+        const questions = this.props.questions
+        const category_ids = this.props.cat_ids
+        const poi_questions = questions.filter(quests => quests.category_id === category_ids[0])
+        return poi_questions
+        
     };
 
     render() {
@@ -26,7 +28,7 @@ class GamePage extends Component {
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</div>
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</div>  
                     <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</div>
-                    {console.log(this.props.cat_ids)}
+                    {console.log(this.poiQuestions())}
                 </div>
         <p></p>
             </div>
