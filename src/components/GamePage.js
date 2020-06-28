@@ -35,6 +35,15 @@ class GamePage extends Component {
         return quran_questions
     };
 
+    oneQuestion(questionArray){
+        // arr[Math.floor(Math.random() * arr.length)]
+        const oneQuestion = []
+        const one = questionArray[Math.floor(Math.random() * questionArray.length)]; 
+        oneQuestion.push(one)
+        return oneQuestion
+
+    };
+
     render() {
         return(
             <div>
@@ -50,7 +59,8 @@ class GamePage extends Component {
                     {/* {console.log(this.prophetQuestions())} */}
                 </div>
                 <div className="grid-container">
-                    {this.poiQuestions().map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)}
+                    {this.oneQuestion(this.poiQuestions()).map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)}
+                    {console.log(this.oneQuestion(this.poiQuestions()))}
                 </div>
             </div>
         );
