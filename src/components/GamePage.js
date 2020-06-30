@@ -53,12 +53,13 @@ class GamePage extends Component {
                 <h1>Game Page</h1>
                 <p>Select Your Category</p>           
                 <div className="grid-container">
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[0]}</div>
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</div>
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</div>  
-                    <div className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</div>
+                    <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[0]}</button>
+                    <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</button>
+                    <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</button>  
                     {/* {console.log(this.prophetQuestions())} */}
                 </div>
+                <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</button>
+                
                 <div className="grid-container">
                     {/* {this.oneQuestion(this.poiQuestions()).map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)} */}
                     {/* <div class="w3-panel w4-card"><p>{this.oneQuestion(this.poiQuestions())[0].ask}</p></div> */}

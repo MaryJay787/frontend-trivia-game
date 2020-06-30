@@ -2,5 +2,5 @@
 
 1. You're using HTML and CSS for styling and it makes writing test code easer
 2. Think about the new UI layout the app is going to have. 
-
 3. Finish wiring backend to frontend  
+4. *** write the functions for the click events first and then figure out question rendering. 
