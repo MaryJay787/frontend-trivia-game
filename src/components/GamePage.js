@@ -35,6 +35,30 @@ class GamePage extends Component {
         return quran_questions
     };
 
+    handlePoiCat(){
+        const words = ["cat", "dog", "mouse", "pig"];
+        document.getElementById('question').innerHTML = "This is a question?";
+        document.getElementsByClassName('answers').innterHTML = "words words words" ;
+        // const iterator = words.values();
+   
+        // for (let word of iterator) {
+        //     document.getElementById('answers').innterHTML = word;
+        //     // console.log(word)
+        //   }
+    };
+
+    handleProCat(){
+
+    };
+
+    handleQuranCat(){
+
+    };
+
+    handleWoiCat(){
+
+    };
+
     // oneQuestion(questionArray){
     //     // arr[Math.floor(Math.random() * arr.length)]
     //     // const oneQuestion = []
@@ -53,17 +77,31 @@ class GamePage extends Component {
                 <h1>Game Page</h1>
                 <p>Select Your Category</p>           
                 <div className="grid-container">
-                    <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[0]}</button>
-                    <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</button>
-                    <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</button>  
+                    <button onClick={this.handlePoiCat} className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[0]}</button>
+                    <button onClick={this.handleProCat} className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[1]}</button>
+                    <button onClick={this.handleWoiCat} className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[2]}</button>  
+                    <button onClick={this.handleQuranCat} className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</button>
                     {/* {console.log(this.prophetQuestions())} */}
                 </div>
-                <button className="w3-green w3-hover-shadow w3-padding-30 w3-center">{this.props.categories[3]}</button>
-                
                 <div className="grid-container">
                     {/* {this.oneQuestion(this.poiQuestions()).map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)} */}
                     {/* <div class="w3-panel w4-card"><p>{this.oneQuestion(this.poiQuestions())[0].ask}</p></div> */}
                     {/* {console.log(Object.values(this.oneQuestion()))} */}
+                </div>
+                <div className="w3-card-4">
+
+                    <header className="w3-container w3-blue" >
+                    <h1 id="question">Header</h1>
+                    </header>
+
+                    <div className="w3-container">
+                    <p className="answers">Lorem ipsum...</p>
+                    </div>
+
+                    <footer className="w3-container w3-blue">
+                    <h5>Footer</h5>
+                    </footer>
+
                 </div>
             </div>
         );
