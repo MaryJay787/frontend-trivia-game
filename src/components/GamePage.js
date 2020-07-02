@@ -35,17 +35,24 @@ class GamePage extends Component {
         return quran_questions
     };
 
+
     handlePoiCat(){
         const words = ["cat", "dog", "mouse", "pig"];
         document.getElementById('question').innerHTML = "This is a question?";
-        document.getElementsByClassName('answers').innterHTML = "words words words" ;
+        document.getElementById('answers').innerHTML = (words[0], words[1]);
+
         // const iterator = words.values();
-   
+        // var x; 
         // for (let word of iterator) {
-        //     document.getElementById('answers').innterHTML = word;
+        //     document.getElementById('answers').innerHTML = word;
         //     // console.log(word)
         //   }
+        //   for (x of words) {
+        //     document.getElementById('answers').write(x);
+        //   }
     };
+
+    
 
     handleProCat(){
 
@@ -93,14 +100,7 @@ class GamePage extends Component {
                     <header className="w3-container w3-blue" >
                     <h1 id="question">Header</h1>
                     </header>
-
-                    <div className="w3-container">
-                    <p className="answers">Lorem ipsum...</p>
-                    </div>
-
-                    <footer className="w3-container w3-blue">
-                    <h5>Footer</h5>
-                    </footer>
+                    <ul><li id="answers"></li></ul>
 
                 </div>
             </div>
