@@ -37,22 +37,8 @@ class GamePage extends Component {
 
 
     handlePoiCat(){
-        const words = ["cat", "dog", "mouse", "pig"];
         document.getElementById('question').innerHTML = "This is a question?";
-        document.getElementById('answers').innerHTML = (words[0], words[1]);
-
-        // const iterator = words.values();
-        // var x; 
-        // for (let word of iterator) {
-        //     document.getElementById('answers').innerHTML = word;
-        //     // console.log(word)
-        //   }
-        //   for (x of words) {
-        //     document.getElementById('answers').write(x);
-        //   }
     };
-
-    
 
     handleProCat(){
 
@@ -66,15 +52,15 @@ class GamePage extends Component {
 
     };
 
-    // oneQuestion(questionArray){
-    //     // arr[Math.floor(Math.random() * arr.length)]
-    //     // const oneQuestion = []
-    //     const one = questionArray[Math.floor(Math.random() * questionArray.length)]; 
-    //     // oneQuestion.push(one)
-    //     // Object.values(one)
-    //     return Object.values(one)
+    oneQuestion(questionArray){
+        // arr[Math.floor(Math.random() * arr.length)]
+        // const oneQuestion = []
+        const one = questionArray[Math.floor(Math.random() * questionArray.length)]; 
+        // oneQuestion.push(one)
+        // Object.values(one)
+        return Object.values(one)
 
-    // };
+    };
 
     render() {
         return(
@@ -91,18 +77,19 @@ class GamePage extends Component {
                     {/* {console.log(this.prophetQuestions())} */}
                 </div>
                 <div className="grid-container">
-                    {/* {this.oneQuestion(this.poiQuestions()).map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)} */}
+                    {this.oneQuestion(this.poiQuestions()).map(item => <div class="w3-panel w4-card"><p>{item.ask}</p></div>)}
                     {/* <div class="w3-panel w4-card"><p>{this.oneQuestion(this.poiQuestions())[0].ask}</p></div> */}
                     {/* {console.log(Object.values(this.oneQuestion()))} */}
                 </div>
                 <div className="w3-card-4">
-
                     <header className="w3-container w3-blue" >
                     <h1 id="question">Header</h1>
                     </header>
-                    <ul><li id="answers"></li></ul>
-
+                <li id="answers">House</li>
+                    
                 </div>
+
+
             </div>
         );
     }
