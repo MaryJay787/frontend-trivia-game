@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './GamePage.css';
+import Question from './components/Question';
+import QuestionCount from './components/QuestionCount';
+import AnswerOption from './components/AnswerOption';
 
 class GamePage extends Component {
     componentDidMount(){
