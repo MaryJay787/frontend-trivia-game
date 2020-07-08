@@ -2,12 +2,22 @@ import React, {Component} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import GamePage from './components/GamePage';
+import Question from './components/Question';
 import { getCategories, getPOIQuestions } from './fetches/backend';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {categories: [], questions: [], cat_ids: []};
+  
+    this.state = {
+      counter: 0,
+      questionId: 1,
+      question: '',
+      answerOptions: [],
+      answer: '',
+      answersCount: {},
+      result: ''
+    };
   }
   componentDidMount(){
     getCategories().then(all_categories => this.setState({categories: all_categories.map(item => (item.title)), cat_ids: all_categories.map(item_two => (item_two.id))}));
@@ -29,10 +39,8 @@ class App extends Component {
           <Link to={'/gamepage'} className='link-to-game-page'>
             <button type="button" className="str-game-btn">Start Game</button>
           </Link>
+          <Question content="Is this question component logging properly?"/>
           </div>
-          <Switch>
-            <Route path='/gamepage'  render={() => (<GamePage categories={this.state.categories} questions={this.state.questions} cat_ids={this.state.cat_ids}/>)} />
-          </Switch>
         </div>
       </Router>
     );
