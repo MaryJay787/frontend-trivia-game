@@ -1,3 +1,5 @@
+// notes: after you pull in the data you have to map through the array about pull out the questions by categories and then store the answer options in the array.
+
 const CATEGORIES = "http://127.0.0.1:3000/categories"
 const POI_QUESTIONS = "http://127.0.0.1:3000/categories/6/questions"
 // const PROPHET_QUESTIONS = "http://127.0.0.1:3000/categories/7/questions"

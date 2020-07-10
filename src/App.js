@@ -23,7 +23,8 @@ class App extends Component {
     getCategories().then(all_categories => this.setState({categories: all_categories.map(item => (item.title)), cat_ids: all_categories.map(item_two => (item_two.id))}));
     // getCategories().then(all_categories => console.log(all_categories))
     getPOIQuestions().then(questions => this.setState({questions: questions}));
-
+    const shuffledAnswerOptions = this.state.questions.map((question) => this.shuffleArray(question.answers));  
+    
   };
  
   render() {
